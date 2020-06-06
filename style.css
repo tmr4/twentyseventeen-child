@@ -1,0 +1,137 @@
+/*
+Theme Name: Twenty Seventeen Child
+Template:   twentyseventeen
+Version:    1.0.0
+*/
+
+/*
+ Child theme modifications:
+ style.css:
+  - added sum-sep class to define separator line to be used between post listing items 
+  - reduce padding in between post listing items
+    - reduce padding in header
+    - code block formating w/ block background color and horizontal scrolling
+    - code block label formatting
+
+header.php:
+  - removed header image template
+
+tempate-parts/post/content.php:
+  - excluded byline on single post header 
+  - added separator line between post listings
+  - display excerpt only in post listings
+
+tempate-parts/footer/site-info.php:
+  - removed WordPress branding
+
+*/
+
+/* search format */
+.navigation-top {
+  top: 0;
+}
+.main-navigation ul {
+  text-align: right;
+}
+input.search-field{
+  width:22em;
+  font-size: 0.875rem;
+}
+.search-submit .icon {
+  vertical-align: top;
+}
+
+/* separator line to be used between post listing items */
+.sum-sep {
+  background: black;
+  content: "\020";
+  display: block;
+  height: 1px;
+  margin: 1rem 0;
+  width: 25em;
+  margin-bottom: 1em;
+}
+
+/* reduce padding in between post listing items */
+.blog .site-main > article {
+  padding-bottom: 0em;
+}
+
+/* make sidebar sticky */
+aside {
+  top: 80px;
+  position: sticky;
+}	
+
+/* format full-width conent */
+.content-full-width {
+  width: 100% !important;
+}
+
+/* indent series list so bullets are inside left margin */
+.post ul {
+  padding-left: 2em;
+}
+
+/* code block formating w/ block background color and horizontal scrolling */
+code {
+  background-color: transparent;
+  display: block;
+  line-height: 1em;
+  padding-left: 2.5em;
+  padding-bottom: 1.5em;
+  margin-top: 2.5em;
+  font-size: 12pt;
+  font-family: monospace, sans-serif;
+  color: #575757;
+}
+pre {
+  border: 1px solid #d1d1d1 !important;
+  background-color: #f5f5f5 !important;
+  max-width: 100%;
+  overflow: auto !important;
+  padding-bottom: 10em;
+  margin: 0;
+  white-space: pre;
+  word-wrap: normal;
+}
+  
+/* code block label formatting */
+.code-label {
+  background-color: #e0e0e0;
+  border-radius: 3px 3px 0 0;
+  color: #323232;
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: -30px;
+  padding: 8px 15px;
+  position: relative;
+  text-align: center;
+  font-style: italic;
+  z-index: 2;
+}
+  
+.copyright a {
+  color: #666;
+}
+
+.copyright {
+  float: right;
+  padding: 0.7em 0 0;
+}
+
+@media screen and (min-width: 30em) {
+  .copyright {
+    float: left;
+    font-size: 0.875rem;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .copyright {
+    float: right;
+    padding: 0.7em 0 0;
+  }
+}
