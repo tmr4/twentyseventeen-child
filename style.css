@@ -7,12 +7,16 @@ Version:    1.0.0
 /*
  Child theme modifications:
  style.css:
+  - modified search related styling for placement of search box in menu bar
   - added sum-sep class to define separator line to be used between post listing items 
   - reduce padding in between post listing items
-    - reduce padding in header
-    - code block formating w/ block background color and horizontal scrolling
-    - code block label formatting
-
+  - makes sidebar sticky
+  - makes post content full width
+  - indent post lists so bullets are inside left margin
+  - code block formating w/ block background color and horizontal scrolling
+  - code block label formatting
+  - add copyright styling similar to site-info class but without hover styling
+  
 header.php:
   - removed header image template
 
@@ -26,7 +30,7 @@ tempate-parts/footer/site-info.php:
 
 */
 
-/* search format */
+/* search format for menu bar */
 .navigation-top {
   top: 0;
 }
