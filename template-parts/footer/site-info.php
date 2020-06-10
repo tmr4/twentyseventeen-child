@@ -27,7 +27,8 @@
 		the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
 	}
 	?>
-	<a href="https://test.wordpress/terms-and-conditions">Terms and Conditions</a>
+	<a href="https://dev.trobertson.website/terms-and-conditions">Terms and Conditions<span role="separator" aria-hidden="true"></span></a>
+	<a href="https://dev.trobertson.website/contact">Contact Us</a>
 </div><!-- .site-info -->
 <div class="copyright">
 	<a>Copyright &copy; 2020 TRobertson</a>
