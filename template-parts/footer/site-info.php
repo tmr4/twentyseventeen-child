@@ -26,9 +26,15 @@
 	if ( function_exists( 'the_privacy_policy_link' ) ) {
 		the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
 	}
+
+	$tc_page = get_page_by_title( 'Terms and Conditions' );
+	$tc_url = get_permalink($tc_page->ID);
+	$cu_page = get_page_by_title( 'Contact' );
+	$cu_url = get_permalink($cu_page->ID);
+
 	?>
-	<a href="https://dev.trobertson.website/terms-and-conditions">Terms and Conditions<span role="separator" aria-hidden="true"></span></a>
-	<a href="https://dev.trobertson.website/contact">Contact Us</a>
+	<a href=" <?php echo esc_url( $tc_url ); ?> ">Terms and Conditions<span role="separator" aria-hidden="true"></span></a>
+	<a href=" <?php echo esc_url( $cu_url ); ?> ">Contact Us</a>
 </div><!-- .site-info -->
 <div class="copyright">
 	<a>Copyright &copy; 2020 TRobertson</a>
