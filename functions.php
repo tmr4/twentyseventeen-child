@@ -86,7 +86,7 @@ remove_filter( 'comment_text', 'make_clickable', 9 );
  * add site and secret keys below at "your_site_key" and 'your_secret_key'
  */
 function add_google_recaptcha($submit_field) {
-    $submit_field['submit_field'] = '<div class="g-recaptcha" data-sitekey="your_site_key"></div><br>' . $submit_field['submit_field'];
+    $submit_field['submit_field'] = '<div class="g-recaptcha" data-sitekey="6Leo06QZAAAAAKmbVMRXarMgDD3Ns8lMW6eVmb_e"></div><br>' . $submit_field['submit_field'];
     return $submit_field;
 }
 if (!is_user_logged_in()) {
@@ -97,7 +97,7 @@ if (!is_user_logged_in()) {
  */
 function is_valid_captcha($captcha) {
 $captcha_postdata = http_build_query(array(
-                            'secret' => 'your_secret_key',
+                            'secret' => '6Leo06QZAAAAADv1lEeLAyc0PYIilXIstoqsf5BF',
                             'response' => $captcha,
                             'remoteip' => $_SERVER['REMOTE_ADDR']));
 $captcha_opts = array('http' => array(
