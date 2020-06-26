@@ -77,4 +77,3 @@ add_filter( 'comment_text_rss', 'wpb_comment_display', '', 1);
 add_filter( 'comment_excerpt', 'wpb_comment_display', '', 1);
 remove_filter( 'comment_text', 'make_clickable', 9 );
 
-
