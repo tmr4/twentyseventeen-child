@@ -1,4 +1,18 @@
 <?php
+
+/*
+Child theme modifications:
+   - enqueues style sheets
+   - adds search form to menu bar
+   - replaces WordPress.org logo on login page with /login/logo.png
+   - replaces WordPress.org url on login page with home url
+   - changed login header text on logo to 'Powered by <site_name>'
+   - removes website field from comment form
+   - changes comment form cookie comment (*** consider making a changable option ***)
+   - filters html in comments
+*/
+
+// enqueue style sheets
 add_action( 'wp_enqueue_scripts', 'child_theme_enqueue_styles' );
 function child_theme_enqueue_styles() {
     // don't need to enqueue child style because parent uses get_stylesheet_uri()
@@ -15,6 +29,7 @@ function child_theme_enqueue_styles() {
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 }
 
+// add search form to menu bar
 add_filter( 'wp_nav_menu_items', 'add_extra_item_to_nav_menu', 10, 2 );
 function add_extra_item_to_nav_menu( $items, $args ) {
     if ($args->theme_location == 'top') {
@@ -24,6 +39,7 @@ function add_extra_item_to_nav_menu( $items, $args ) {
     return $items;
 }
 
+// replace WordPress.org logo on login page with /login/logo.png
 function modify_login_logo() {
     $logo_style = '<style type="text/css">';
     $logo_style .= '#login h1 a {background-image: url(' . get_stylesheet_directory_uri() . '/login/logo.png) !important;}';
@@ -33,14 +49,19 @@ function modify_login_logo() {
 //add_action('login_head', 'modify_login_logo');
 add_action('login_enqueue_scripts', 'modify_login_logo');
 
+// replace WordPress.org url on login page with home url
 function custom_login_url() {
     return home_url();
 }
 add_filter('login_headerurl', 'custom_login_url');
 
-// changing the alt text on the logo to show your site name
-function mb_login_title() { return "Powered by TRobertson"; }
-add_filter( 'login_headertext', 'mb_login_title' );
+// change login header text on logo to 'Powered by <site name>'
+function custom_login_header_text( $headertext ) {
+    "Powered by TRobertson";
+    $headertext = esc_html__( 'Powered by ' . get_bloginfo(), 'plugin-textdomain' );
+    return $headertext;
+}
+add_filter( 'login_headertext', 'custom_login_header_text' );
 
 // remove website field from comment form
 function wpb_disable_comment_url($fields) { 

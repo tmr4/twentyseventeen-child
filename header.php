@@ -14,11 +14,10 @@
 
 /*
  Child theme modifications:
-	- removed header image template
+	- removed header image template at line 39, which removes header image and site branding
 
 			<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
 	
-	at line 39, which removes header image and site branding
 */
 
 ?><!DOCTYPE html>
@@ -34,6 +33,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyseventeen' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
 

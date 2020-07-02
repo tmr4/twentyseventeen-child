@@ -17,8 +17,27 @@ Version:    1.0.0
   - code block label formatting
   - add copyright styling similar to site-info class but without hover styling
   
+functions.php
+   - enqueues style sheets
+   - adds search form to menu bar
+   - replaces WordPress.org logo on login page with /login/logo.png
+   - replaces WordPress.org url on login page with home url
+   - changed login header text on logo to 'Powered by <site_name>'
+   - removes website field from comment form
+   - changes comment form cookie comment (*** consider making a changable option ***)
+   - filters html in comments
+
 header.php:
   - removed header image template
+
+searchform.php
+	- removed 'Search' text from search button
+
+single.php
+	- added google-recaptcha script enqueue
+	- added content-full-width class to primary division
+	- moved comment section below post navigation
+	- removed sidebar <?php get_sidebar(); ?>
 
 tempate-parts/post/content.php:
   - excluded byline on single post header 
@@ -27,10 +46,12 @@ tempate-parts/post/content.php:
 
 tempate-parts/footer/site-info.php:
   - removed WordPress branding
+	- added 'Terms and Contitions' and 'Contact' with links after privacy policy
+	- added copyright notice to right of footer
 
 */
 
-/* search format for menu bar */
+/* search box format for menu bar */
 .navigation-top {
   top: 0;
 }
@@ -72,7 +93,7 @@ aside {
   width: 100% !important;
 }
 
-/* indent series list so bullets are inside left margin */
+/* indent post list so bullets are inside left margin */
 .post ul {
   padding-left: 2em;
 }

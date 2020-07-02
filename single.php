@@ -12,13 +12,17 @@
 
  /*
  Child theme modifications:
+	- added google-recaptcha script enqueue
 	- added content-full-width class to primary division
+	- moved comment section below post navigation
+	- removed sidebar <?php get_sidebar(); ?>
 */
 
 // from: https://www.oueta.com/wordpress/add-google-recaptcha-to-wordpress-comments-without-plugin/
 // register w/ Google at https://www.google.com/recaptcha/admin#list
 // add site and secret keys in functions.php
 wp_enqueue_script('google-recaptcha', 'https://www.google.com/recaptcha/api.js');
+
 get_header(); ?>
 
 <div class="wrap">

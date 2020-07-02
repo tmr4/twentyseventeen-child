@@ -8,6 +8,11 @@
  * @version 1.0
  */
 
+ /*
+ Child theme modifications:
+	- removed 'Search' text from search button
+*/
+
 ?>
 
 <?php $unique_id = esc_attr( twentyseventeen_unique_id( 'search-form-' ) ); ?>
